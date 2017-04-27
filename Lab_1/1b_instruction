@@ -1,0 +1,13 @@
+1b
+
+NOTE: All addresses you enter in this block are supposed to be runtime addresses. 
+If you obtain some of them during static analysis, be sure to add the load offset. 
+Some buffers may even only exist at runtime...
+
+Use OpenOCD to halt execution while the input prompt is active. 
+You should find yourself in a minimal delay() function 
+- check your surroundings with "arm disassemble" to be sure 
+(e.g. if you halted at PC 0x12134, you could do "arm disassemble 0x12120 16" to see code for 0x12120--0x12160).
+
+Once you're sure you've interrupted execution at the right place, 
+provide the current register values by just pasting the output of the OpenOCD "reg" command.
