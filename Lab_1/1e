@@ -1,7 +1,0 @@
-1e
-
-NOTE: All addresses you enter in this block are supposed to be runtime addresses. If you obtain some of them during static analysis, be sure to add the load offset. Some buffers may even only exist at runtime...
-
-Disarm the comparison function, i.e. make it always match no matter what is entered during the input loop. Describe your patch as a list of word replacements in the following format: if you changed the instruction at binary offset 0x34 from 'mov r0, r0 (0xe1a00000)' to 'mov r1, r1 (0xe1a01001)', write:
-mem[0x12034] = 0xe1a01001
-If you patch more than one word, then add more lines of the same format. However only one change should actually be enough.
