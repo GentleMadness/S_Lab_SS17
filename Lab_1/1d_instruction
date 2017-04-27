@@ -1,9 +1,14 @@
 1d
 
-NOTE: All addresses you enter in this block are supposed to be runtime addresses. If you obtain some of them during static analysis, be sure to add the load offset. Some buffers may even only exist at runtime...
+NOTE: All addresses you enter in this block are supposed to be runtime addresses. 
+If you obtain some of them during static analysis, be sure to add the load offset. 
+Some buffers may even only exist at runtime...
 
-Finally one would envision that the entered passphrase is compared against the (stored or computed) correct one. Use the return address from 1c to locate the calling function again.
-A comparison function should take two arguments: your input and the solution. So look around where your input buffer is passed as a parameter again, and determine the following locations:
+Finally one would envision that the entered passphrase is compared against the (stored or computed) correct one. 
+Use the return address from 1c to locate the calling function again.
+A comparison function should take two arguments: 
+your input and the solution. So look around where your input buffer is passed as a parameter again, 
+and determine the following locations:
 
     call_to_comparison_function -- the location of the 'BL' instruction
     comparison_function() -- the function that compares input and stored secret
