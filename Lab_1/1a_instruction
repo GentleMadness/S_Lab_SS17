@@ -1,0 +1,17 @@
+1a
+
+The first assignment deals with the small bootloader that keeps certain parts of our Pi Linux installation sealed away 
+unless it is unlocked with the correct passphrase. 
+Your goal is to determine the correct passphrase and to patch the bootloader so the sealed content is available without interaction.
+
+NOTE: All addresses you enter in this block are supposed to be runtime addresses. 
+If you obtain some of them during static analysis, be sure to add the load offset. Some buffers may even only exist at runtime...
+
+
+
+Before you start interacting with the bootloader, inspect the binary itself for a moment. 
+The tools from GNU Binutils are very handy for this task. 
+There is a suspicious-looking string in the binary that fully qualifies as a passphrase: 
+quite long, lots of special characters, letters, numbers... sadly it's only a passphrase template, not the actual one.
+
+Please extract that passphrase template and enter it here.
