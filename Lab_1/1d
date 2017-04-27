@@ -1,0 +1,16 @@
+1d
+
+NOTE: All addresses you enter in this block are supposed to be runtime addresses. If you obtain some of them during static analysis, be sure to add the load offset. Some buffers may even only exist at runtime...
+
+Finally one would envision that the entered passphrase is compared against the (stored or computed) correct one. Use the return address from 1c to locate the calling function again.
+A comparison function should take two arguments: your input and the solution. So look around where your input buffer is passed as a parameter again, and determine the following locations:
+
+    call_to_comparison_function -- the location of the 'BL' instruction
+    comparison_function() -- the function that compares input and stored secret
+    solution_buffer[] -- pointer to the buffer holding the correct passphrase
+
+Please also dump the correct passphrase as a string, and put all that into an equation list again, e.g.
+call_to_comparison_function = 0x1300c
+comparison_function = 0x10cc8
+solution_buffer = 0x9990
+solution = "*Very%Secret$P4ss&Phrase*"

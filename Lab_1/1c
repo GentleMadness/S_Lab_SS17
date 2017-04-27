@@ -1,0 +1,19 @@
+1c
+
+NOTE: All addresses you enter in this block are supposed to be runtime addresses. If you obtain some of them during static analysis, be sure to add the load offset. Some buffers may even only exist at runtime...
+
+Now look at the calling function. It has a proper register-save/restore prologue and epilogue, so you can determine its boundaries by that.
+Please reverse-engineer the following memory locations by looking at this function. You will have to use the register values you obtained in 1b to find some of them:
+
+    uart_read_char() -- a function that reads a byte from the UART
+    uart_write_char() -- a function that writes a byte onto the UART
+    delay() -- a function that wastes a little time
+    input_buffer[] -- pointer to the buffer holding the passphrase input
+    return_address -- the location this function will eventually return to
+
+Submit the locations as a simple equation list, e.g.
+uart_read_char = 0x12380
+uart_write_char = 0x123c0
+delay = 0x12130
+input_buffer = 0x14144
+return_address = 0x11188
