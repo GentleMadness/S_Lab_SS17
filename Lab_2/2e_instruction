@@ -1,0 +1,13 @@
+This assignment will finally get you a shell on the Raspberry. 
+There are many ways to pass a signature check: 
+violating the signature format (thus possibly triggering a bug in the check function), 
+finding a hash collision (so a benign signature acquired beforehand also pertains to your crafted data), 
+or obtaining private key material. In this case you'll do the latter.
+
+Use the script available at <http://seclab.sec.t-labs.tu-berlin.de/comp2key.py> to assemble your components into a usable key. 
+Then create a message according to the specification of the service you found in 2a to install your login credentials on the Pi.
+Upload a hexdump of your message (data plus detached signature) which you obtained by running
+
+hexdump -v -e '1/1 "%02x"' $YOURMESSAGEFILE
+
+The result should be a continuous stream of hexadecimal characters, no line breaks, no spaces etc.
