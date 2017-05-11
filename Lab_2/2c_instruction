@@ -1,0 +1,13 @@
+This assignment will finally get you a shell on the Raspberry.
+There are many ways to pass a signature check: 
+violating the signature format (thus possibly triggering a bug in the check function), 
+finding a hash collision (so a benign signature acquired beforehand also pertains to your crafted data), 
+or obtaining private key material. In this case you'll do the latter.
+
+
+
+Use the list of moduli to determine a prime factor. 
+If you're stuck what approach you should take, have a look at Google Scholar, 
+there has been a recent survey on prime factors of SSH RSA keys.
+Enter the prime factor you found here (hexadecimal, leading 0x).
+
